@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- TablePlay (the Player): a d6 with its pips. Only the mark; generate.py adds the background. -->
+  <g stroke="#8ECAE6" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <polygon points="50,8 88,28 50,48 12,28" stroke-width="5"/>
+    <polygon points="12,28 50,48 50,92 12,72" stroke-width="5"/>
+    <polygon points="88,28 50,48 50,92 88,72" stroke-width="5"/>
+  </g>
+  <g fill="#8ECAE6" stroke="none">
+    <circle cx="50" cy="28" r="5"/>
+    <circle cx="24" cy="48" r="4.5"/>
+    <circle cx="38" cy="72" r="4.5"/>
+    <circle cx="62" cy="50" r="4.5"/>
+    <circle cx="69" cy="56" r="4.5"/>
+    <circle cx="76" cy="62" r="4.5"/>
+  </g>
+</svg>

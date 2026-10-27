@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- TableTrack (the DM): a d20. Only the mark; generate.py adds the background and places it. -->
+  <g stroke="#E9C46A" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <polygon points="50,6 88,28 88,72 50,94 12,72 12,28" stroke-width="5"/>
+    <polygon points="50,24 72,62 28,62" stroke-width="4"/>
+    <path d="M50,6 L50,24 M88,28 L72,62 M12,28 L28,62 M88,72 L72,62 M12,72 L28,62 M50,94 L72,62 M50,94 L28,62 M88,28 L50,24 M12,28 L50,24" stroke-width="3"/>
+  </g>
+</svg>

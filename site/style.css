@@ -1,0 +1,116 @@
+:root {
+  --bg: #f7f5ef;
+  --surface: #ffffff;
+  --ink: #1f2128;
+  --muted: #5b5f6b;
+  --line: #e2ded3;
+  --night: #23262f;
+  --gold: #e8b85a;
+  --blue: #8cc6e8;
+  --coral: #ef8a7c;
+  --accent: #4d6b2f;
+  --radius: 16px;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17191f;
+    --surface: #20232b;
+    --ink: #eceae4;
+    --muted: #a6a9b3;
+    --line: #2f333d;
+    --accent: #b7d68e;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+a { color: var(--accent); }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+
+header.top {
+  border-bottom: 1px solid var(--line);
+}
+header.top .wrap {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  min-height: 64px; flex-wrap: wrap;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; color: var(--ink); text-decoration: none; }
+.brand .mark { width: 34px; height: 34px; background: var(--night); border-radius: 9px; padding: 4px; }
+nav a { margin-left: 18px; color: var(--muted); text-decoration: none; font-size: 15px; }
+nav a:first-child { margin-left: 0; }
+nav a:hover, nav a[aria-current] { color: var(--ink); }
+
+.hero {
+  background: var(--night);
+  color: #f2efe9;
+  padding: 72px 0 64px;
+  text-align: center;
+}
+.hero .marks { display: flex; justify-content: center; gap: 28px; margin-bottom: 28px; }
+.hero .marks img { width: 72px; height: 72px; }
+.hero h1 { font-size: clamp(40px, 7vw, 64px); line-height: 1.05; margin: 0 0 14px; }
+.hero p.lead { font-size: clamp(18px, 2.4vw, 22px); color: #cfcbc2; max-width: 680px; margin: 0 auto 28px; }
+.button {
+  display: inline-block; padding: 12px 22px; border-radius: 999px; font-weight: 600;
+  background: var(--gold); color: #23262f; text-decoration: none;
+}
+.hero small { display: block; margin-top: 14px; color: #a9a59c; }
+
+section { padding: 56px 0; }
+section h2 { font-size: 30px; margin: 0 0 8px; }
+section > .wrap > p.sub { color: var(--muted); margin: 0 0 32px; max-width: 720px; }
+
+.ways { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.way {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 24px;
+}
+.way img.icon { width: 52px; height: 52px; background: var(--night); border-radius: 12px; padding: 6px; }
+.way h3 { margin: 14px 0 4px; font-size: 22px; }
+.way .who { color: var(--muted); font-size: 15px; margin: 0 0 12px; }
+.way ul { margin: 0; padding-left: 20px; }
+
+.shots { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; }
+.shots figure { margin: 0; flex: 0 0 auto; scroll-snap-align: start; }
+.shots img { height: 480px; width: auto; border-radius: 18px; border: 1px solid var(--line); display: block; }
+.shots figcaption { color: var(--muted); font-size: 14px; margin-top: 8px; }
+.tv img { width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--line); display: block; }
+
+.promises { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.promise { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+.promise strong { display: block; font-size: 18px; margin-bottom: 4px; }
+.promise span { color: var(--muted); font-size: 15px; }
+
+article.doc { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+article.doc h1 { font-size: 38px; line-height: 1.15; margin: 0 0 6px; }
+article.doc .meta { color: var(--muted); margin: 0 0 32px; }
+article.doc h2 { font-size: 23px; margin: 36px 0 8px; }
+article.doc h3 { font-size: 18px; margin: 22px 0 6px; }
+article.doc .summary {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px 22px; margin-bottom: 8px;
+}
+article.doc table { border-collapse: collapse; width: 100%; font-size: 15px; display: block; overflow-x: auto; }
+article.doc th, article.doc td { text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); padding: 10px 12px 10px 0; }
+
+footer {
+  border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; padding: 28px 0 40px;
+}
+footer .links a { margin-right: 18px; }
+footer p { margin: 10px 0 0; }
+
+@media (max-width: 600px) {
+  .shots img { height: 380px; }
+  nav a { margin-left: 12px; }
+  .hero .marks img { width: 56px; height: 56px; }
+}
