@@ -114,3 +114,15 @@ footer p { margin: 10px 0 0; }
   nav a { margin-left: 12px; }
   .hero .marks img { width: 56px; height: 56px; }
 }
+
+article.doc.wide { max-width: 1040px; }
+.video video { width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--line); background: #000; display: block; }
+.copy { display: flex; gap: 8px; margin-top: 12px; }
+.copy input {
+  flex: 1; min-width: 0; font: 14px ui-monospace, Menlo, monospace; padding: 10px 12px;
+  border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink);
+}
+.copy button {
+  padding: 10px 18px; border: 0; border-radius: 999px; font-weight: 600; cursor: pointer;
+  background: var(--gold); color: #23262f;
+}

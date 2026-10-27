@@ -18,3 +18,7 @@ Preview locally: `python3 -m http.server -d site 8000`, then open http://localho
 The images come from the app's repository: the marks from `store/icons/`, the screenshots from
 the Play listing (`androidApp/src/main/play`). The privacy policy and the child safety page are
 the URLs given to Google Play and the App Store; change them with the app, not apart from it.
+
+Videos (`site/video/*.mp4`) are stored with Git LFS (`git lfs install` once after cloning); the
+deploy checks them out with `lfs: true`, so Pages serves the real files. `videos.html` gives each
+one a player and a link to copy into Google Play's and Apple's review forms.

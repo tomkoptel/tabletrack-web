@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Videos — TableTrack</title>
+  <meta name="description" content="Short videos of TableTrack at work, including the demonstrations Google Play and Apple reviewers ask for.">
+  <link rel="icon" href="img/tabletrack.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img class="mark" src="img/tabletrack.svg" alt="">TableTrack</a>
+    <nav>
+      <a href="./#ways">The app</a>
+      <a href="videos.html" aria-current="page">Videos</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="child-safety.html">Child safety</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article class="doc wide">
+  <h1>Videos</h1>
+  <p class="meta">TableTrack at work. Reviewers: each video has a link to copy into the review form.</p>
+
+  <section class="video" id="hosting-foreground-service">
+    <h2>Hosting a table: the foreground service</h2>
+    <video controls preload="metadata" playsinline poster="video/hosting-foreground-service.webp">
+      <source src="video/hosting-foreground-service.mp4" type="video/mp4">
+    </video>
+    <p>Why TableTrack uses <code>FOREGROUND_SERVICE_CONNECTED_DEVICE</code> (continuous data transfer to an external device). The Dungeon Master’s phone, left, hosts the table; an Android TV running TableCast, right, connects over the local Wi-Fi:</p>
+    <ol>
+      <li>The TV asks to show the table, and the Dungeon Master allows it.</li>
+      <li>The Dungeon Master reveals the battle map, and the TV shows it with the creature tokens.</li>
+      <li>The Dungeon Master leaves the app. The hosting service keeps serving the table in the background, shown by the ongoing “Hosting The Sunken Keep” notification with its Stop action, and the TV stays live.</li>
+    </ol>
+    <div class="copy">
+      <input readonly value="https://tomkoptel.github.io/tabletrack-web/video/hosting-foreground-service.mp4" aria-label="Video link">
+      <button type="button">Copy link</button>
+    </div>
+  </section>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="./">Home</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="child-safety.html">Child safety standards</a>
+      <a href="mailto:tom.koptel@gmail.com">tom.koptel@gmail.com</a>
+    </div>
+  </div>
+</footer>
+<script>
+  // Copies the link beside the button; falls back to selecting it where the clipboard is blocked.
+  document.querySelectorAll('.copy').forEach(function (box) {
+    var input = box.querySelector('input'), button = box.querySelector('button');
+    button.addEventListener('click', function () {
+      var done = function () { button.textContent = 'Copied'; setTimeout(function () { button.textContent = 'Copy link'; }, 2000); };
+      if (navigator.clipboard) navigator.clipboard.writeText(input.value).then(done, function () { input.select(); });
+      else { input.select(); document.execCommand('copy'); done(); }
+    });
+  });
+</script>
+</body>
+</html>
